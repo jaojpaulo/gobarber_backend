@@ -4,9 +4,9 @@ import expres, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import 'express-async-errors';
 
-import routes from './routes';
 import uploadConfig from '@config/upload';
 import AppError from '@shared/errors/AppError';
+import routes from './routes';
 
 import '@shared/infra/typeorm';
 import '@shared/container';
@@ -15,7 +15,7 @@ const app = expres();
 
 app.use(cors());
 app.use(expres.json());
-app.use('/files', expres.static(uploadConfig.directory));
+app.use('/files', expres.static(uploadConfig.uploadsFolder));
 app.use(routes);
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
