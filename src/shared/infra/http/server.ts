@@ -16,9 +16,9 @@ import '@shared/container';
 
 const app = expres();
 
-app.use(rateLimiter);
 app.use(cors());
 app.use(expres.json());
+app.use(rateLimiter);
 app.use('/files', expres.static(uploadConfig.uploadsFolder));
 app.use(routes);
 
