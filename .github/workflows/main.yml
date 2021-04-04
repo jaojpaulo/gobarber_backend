@@ -46,32 +46,7 @@ jobs:
           script: |
             cd ~/app/gobarber_backend
             yarn
-      
-      # Executar as migrations do TypeORM
-      - name: Run migrations on Digital Ocean
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd ~/app/gobarber_backend
             ./node_modules/.bin/typeorm migration:run
+            pm2 restart gobarberapi
       
-      # Restart no servidor Node.js
-      - name: Restart 
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }}
-          script: pm2 restart gobarberapi
-     
-      
-
-
-
-
 
