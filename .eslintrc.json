@@ -42,7 +42,8 @@
           "regex": "^I[A-Z]",
           "match": true
         }
-      }]
+      }],
+      "@typescript-eslint/ban-types": "off"
 	  },
 	  "settings": {
 	    "import/resolver": {
