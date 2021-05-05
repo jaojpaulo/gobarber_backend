@@ -1,7 +1,7 @@
 
 # Aplicação GoBarber 🧔 - Backend
 
-Implementação da API proposta no Bootcamp Gostack 14 da 🚀@Rocketseat
+Implementação da API proposta no Bootcamp Gostack 14 da 🚀 [@Rocketseat]( https://github.com/Rocketseat )
 ## Executar localmente
 
 Clone o projeto
